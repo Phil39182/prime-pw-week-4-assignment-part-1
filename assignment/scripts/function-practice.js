@@ -4,6 +4,38 @@ console.log('***** Function Practice *****')
 // After _each_ function, use a console log to call the function
 // to test it and display the result
 
+function logger(){
+console.log(`in logger`);
+}//end logger
+
+function returner(){
+  console.log(  `in returner `);
+  return true;
+}
+
+function mathExample(){
+  console.log(`in mathExample`);
+  let answer = 3 * 9;
+  return answer;
+}
+
+function actualMath( num0, num1 ){
+  console.log(`in actualMath, ${num0}, ${num1}`);
+  let answer = num0 * num1;
+  return answer;
+}
+
+logger();
+returner();
+console.log(`running returner:, ${returner()}`);
+
+mathExample();
+console.log(`${mathExample()}`);
+
+console.log(`running actual math ${actualMath(4,6)}`);
+console.log(`Running actual math again ${actualMath(5,5)}`);
+
+
 // 1. Function to return 'Hello World!'
 function hello() {
   return 'Hello World!';

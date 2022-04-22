@@ -1,39 +1,73 @@
 console.log('***** Function Practice *****')
 
+function logger(){
+  console.log(`in logger`);
+  }//end logger
+  
+  function returner(){
+    console.log(  `in returner `);
+    return true;
+  }
+  
+  function mathExample(){
+    console.log(`in mathExample`);
+    let answer = 3 * 9;
+    return answer;
+  }
+  
+  function actualMath( num0, num1 ){
+    console.log(`in actualMath, ${num0}, ${num1}`);
+    let answer = num0 * num1;
+    return answer;
+  }
+  
+  logger();
+  returner();
+  console.log(`running returner:, ${returner()}`);
+  
+  mathExample();
+  console.log(`${mathExample()}`);
+  
+  console.log(`running actual math ${actualMath(4,6)}`);
+  console.log(`Running actual math again ${actualMath(5,5)}`);
+
+  
+
+  const seatsInCar = 5;
+  let passengers = [];
+  let tankFull = false;
+
+  function enoughSeats(){
+    console.log( `in enoughSeats`);
+    //check if seatsInCar >= number of passengers
+    if( seatsInCar >= passengers.length ){
+      return true;
+    } //end enough seats
+    else{
+      return false;
+    }//end not enough seats
+  }//end function enoughSets
+
+  function getInCar( nameOfPassenger ){
+    console.log( `in getInCar, ${nameOfPassenger}`);
+    //push this new passenger into our passengers array
+    passengers.push ( nameOfPassenger );
+    return passengers;
+    //end getInCar
+  }
+
+  getInCar(`Phil`);
+  getInCar(`Mike`);
+  getInCar(`Edan`);
+  getInCar(`Aubrey`);
+
+  console.log(` ${enoughSeats()} `);
+
+
 // Add the required code to complete the functions below
 // After _each_ function, use a console log to call the function
 // to test it and display the result
 
-function logger(){
-console.log(`in logger`);
-}//end logger
-
-function returner(){
-  console.log(  `in returner `);
-  return true;
-}
-
-function mathExample(){
-  console.log(`in mathExample`);
-  let answer = 3 * 9;
-  return answer;
-}
-
-function actualMath( num0, num1 ){
-  console.log(`in actualMath, ${num0}, ${num1}`);
-  let answer = num0 * num1;
-  return answer;
-}
-
-logger();
-returner();
-console.log(`running returner:, ${returner()}`);
-
-mathExample();
-console.log(`${mathExample()}`);
-
-console.log(`running actual math ${actualMath(4,6)}`);
-console.log(`Running actual math again ${actualMath(5,5)}`);
 
 
 // 1. Function to return 'Hello World!'
@@ -47,34 +81,44 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
-  return;
+  let greeting = 'Hello, ' + name;
+  //return text "Hello, " and user input string for name
+  return greeting;
 }
 // Remember to call the function to test
 
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
+function addNumbers( firstNumber, secondNumber ) {
+  let answer = firstNumber + secondNumber;
+  return answer;
   // return firstNumber + secondNumber;
 }
 
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( ){
-
+function multiplyThree(num0, num1, num2 ){
+  let multiplyThree = num0 * num1 * num2;
+  //return multiplied value of three user input numbers when run
+  return multiplyThree;
 }
 
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
-  if ( number > 0 ){
-    return;
+  if ( number >= 0 ){
+    //if number is zero or higer will return true
+    return true;
   }
-    return;
+  else{
+    //if number is lower than zero will return false
+    return false;
+  }
 }
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
-console.log( 'isPositive - should say true', isPositive(3) );
+console.log( 'isPositive run with - should say true', isPositive(3) );
 console.log( 'isPositive - should say false', isPositive(0) );
 console.log( 'isPositive - should say false', isPositive(-3) );
 

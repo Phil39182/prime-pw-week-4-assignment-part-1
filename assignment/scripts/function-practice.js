@@ -1,69 +1,3 @@
-console.log('***** Function Practice *****')
-
-function logger(){
-  console.log(`in logger`);
-  }//end logger
-  
-  function returner(){
-    console.log(  `in returner `);
-    return true;
-  }
-  
-  function mathExample(){
-    console.log(`in mathExample`);
-    let answer = 3 * 9;
-    return answer;
-  }
-  
-  function actualMath( num0, num1 ){
-    console.log(`in actualMath, ${num0}, ${num1}`);
-    let answer = num0 * num1;
-    return answer;
-  }
-  
-  logger();
-  returner();
-  console.log(`running returner:, ${returner()}`);
-  
-  mathExample();
-  console.log(`${mathExample()}`);
-  
-  console.log(`running actual math ${actualMath(4,6)}`);
-  console.log(`Running actual math again ${actualMath(5,5)}`);
-
-  
-
-  const seatsInCar = 5;
-  let passengers = [];
-  let tankFull = false;
-
-  function enoughSeats(){
-    console.log( `in enoughSeats`);
-    //check if seatsInCar >= number of passengers
-    if( seatsInCar >= passengers.length ){
-      return true;
-    } //end enough seats
-    else{
-      return false;
-    }//end not enough seats
-  }//end function enoughSets
-
-  function getInCar( nameOfPassenger ){
-    console.log( `in getInCar, ${nameOfPassenger}`);
-    //push this new passenger into our passengers array
-    passengers.push ( nameOfPassenger );
-    return passengers;
-    //end getInCar
-  }
-
-  getInCar(`Phil`);
-  getInCar(`Mike`);
-  getInCar(`Edan`);
-  getInCar(`Aubrey`);
-
-  console.log(` ${enoughSeats()} `);
-
-
 // Add the required code to complete the functions below
 // After _each_ function, use a console log to call the function
 // to test it and display the result
@@ -146,6 +80,7 @@ console.log( 'in getLast (matt): ' + getLast( names ) ) ; // matt
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
+
 function find( value, array ){
   for ( let i = 0; i <= array.length; i++ ) {
     if ( value === array[i] ) {
@@ -176,7 +111,7 @@ console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
 
-let numbers = [ 2, 4, 6, 8, 10, -3, -2 ];
+let numbers = [ -2, 2, 4, 6, 8, 10, 3, 4]; 
 
 function sumAll( array ) {
   let sum = 0
@@ -186,20 +121,33 @@ function sumAll( array ) {
     sum += number;
   }
 
-  return sum;
+  return sum; //25
 }
+
+console.log(`in sumAll adding values from numbers array expected answer 35: ${sumAll(numbers)}`);
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
-function positiveNumbers(){
-  for ( let i = 0; numbers[i] > 0; i++ ) {
-      console.log(numbers[i])
-    }
+
+function positiveNumbers( array ){
+  let posNumbers = 0; //used to count how many positive numbers
+
+  for ( let i = 0; i < array.length; i++ ) {
+      if ( array[i] > 0 ){
+        console.log(array[i]);
+        posNumbers++;
+      }
   }
+//once the for loop finishes, if there were no positive numbers
+//an empty array will be returned
+  if ( posNumbers === 0 ) {
+    return array = [];
+  }
+}
 
-
+//console.log(`in positive Numbers, expected result 2 4 6 8 10: ${positiveNumbers(numbers)}`);
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
@@ -226,4 +174,4 @@ function spinWords( string ) {
   return sentence.join(' ');
 }  
 
-console.log(`in spinWords ${spinWords('I enjoyed this challenge!')}`);
+console.log(`in spinWords: ${spinWords('I enjoyed this challenge!')}`);

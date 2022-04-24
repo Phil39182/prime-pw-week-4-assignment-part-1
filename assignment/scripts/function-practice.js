@@ -175,3 +175,12 @@ function spinWords( string ) {
 }  
 
 console.log(`in spinWords: ${spinWords('I enjoyed this challenge!')}`);
+
+
+//second problem from codewars
+//function that adds two numbers and then converts their sum to binary
+
+function addBinary(a,b) {
+  let sum = a + b;
+   return sum.toString(2);
+ }
